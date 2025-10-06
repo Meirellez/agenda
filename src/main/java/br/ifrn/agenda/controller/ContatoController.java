@@ -1,25 +1,25 @@
 package br.ifrn.agenda.controller;
 
-import br.ifrn.agenda.controller.Rotas.rotaContatos;
-import br.ifrn.agenda.controller.Rotas.rotasBase;
 import br.ifrn.agenda.model.dto.ContatoDTO;
+import br.ifrn.agenda.repository.ContactRepository;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
-@RequestMapping (rotaContatos.root)
+import java.util.List;
+
+@RestController
+@RequestMapping("/api/contatos")
+@RequiredArgsConstructor
 public class ContatoController {
 
-    @GetMapping(rotasBase.LIST)
-    public ResponseEntity<String> getContacts(){
-        ContatoDTO contatoDTO = ContatoDTO.builder()
-                .nome("gabriel")
-                .telefone("(84) 99412 0123")
-                .build();
+    private final ContactRepository contactRepository;
 
-        return ResponseEntity.ok(contatoDTO.toString());
+    @GetMapping
+    public ResponseEntity<List<ContatoDTO>> listarTodos() {
+        List<ContatoDTO> contatos = contactRepository.findAll();
+        return ResponseEntity.ok(contatos);
     }
-
 }

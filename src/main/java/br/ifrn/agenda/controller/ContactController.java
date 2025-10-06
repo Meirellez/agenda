@@ -1,8 +1,7 @@
 package br.ifrn.agenda.controller;
 
 import br.ifrn.agenda.controller.rotas.RotaContatos;
-import br.ifrn.agenda.controller.rotas.RotasBases;
-import br.ifrn.agenda.model.dto.ContatoDTO;
+import br.ifrn.agenda.controller.rotas.RotasBase;
 import br.ifrn.agenda.service.ContactService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -17,7 +16,7 @@ public class ContactController {
 
     private final ContactService contactService;
 
-    @GetMapping(RotasBases.LISTA)
+    @GetMapping(RotasBase.LIST)
     public ResponseEntity getContact() {
 
         return ResponseEntity.ok(contactService.getAll());
