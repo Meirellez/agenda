@@ -1,7 +1,5 @@
-package br.ifrn.agenda.controller.Rotas;
+package br.ifrn.agenda.controller.rotas;
 
-public interface rotaContatos {
-
-    String root = "/contato";
-
+public interface RotaContatos {
+    String ROOT = "/contatos";
 }

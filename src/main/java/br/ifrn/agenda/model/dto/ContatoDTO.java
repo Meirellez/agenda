@@ -5,10 +5,7 @@ import lombok.Getter;
 
 @Getter
 @Builder
-public class ContatoDTO{
-
+public class ContatoDTO {
     private String nome;
     private String telefone;
-
 }
-
