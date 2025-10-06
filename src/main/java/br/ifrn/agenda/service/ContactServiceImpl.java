@@ -1,7 +1,7 @@
 package br.ifrn.agenda.service;
 
 import br.ifrn.agenda.model.dto.ContatoDTO;
-import br.ifrn.agenda.repository.ContactJpaRepository;
+import br.ifrn.agenda.repository.ContactRepository;
 import org.springframework.stereotype.Service;
 
 import  java.util.ArrayList;
