@@ -3,19 +3,20 @@ package br.ifrn.agenda.repository.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.UUID;
+
+@Entity
+@Table(schema = "agenda", name = "contact")
 @Getter
 @Setter
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Entity
-@Table(schema = "agenda", name = "contact")
-
-
 public class ContactEntity {
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_contact")
-    @SequenceGenerator(name = "seq_contact", schema = "agenda", sequenceName = "seq_contact", allocationSize = 12)
+    @SequenceGenerator(name = "seq_contact", schema = "agenda", sequenceName = "seq_contact", allocationSize = 1)
     @Column(name = "id")
     private Long id;
 
@@ -27,10 +28,6 @@ public class ContactEntity {
 
     @Column(name = "email")
     private String email;
-
-
-
-
 
 
 }
