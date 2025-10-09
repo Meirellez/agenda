@@ -32,12 +32,12 @@ public class ContactController {
         return ResponseEntity.ok(contactService.getAll());
     }
 
-//    @PostMapping(value= RotasBase.FORM,
-//            consumes = MediaType.APPLICATION_JSON_VALUE,
-//            produces = MediaType.APPLICATION_JSON_VALUE)
-//    public ResponseEntity saveContacts(@RequestBody ContatoRecord contact) {
-//
-//        return ResponseEntity.ok(contactService.saveContact(contact));
-//    }
+    @PostMapping(value= RotasBase.FORM,
+            consumes = MediaType.APPLICATION_JSON_VALUE,
+            produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity saveContacts(@RequestBody ContatoRecord contact) {
+
+        return ResponseEntity.ok(contactService.saveContact(contact));
+    }
 
 }
