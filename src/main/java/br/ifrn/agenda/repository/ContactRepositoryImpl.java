@@ -41,6 +41,11 @@ public class ContactRepositoryImpl implements ContactRepository {
     }
 
     private ContatoDTO parseToDTO(ContactEntity contactEntity) {
+        ContatoDTO contatoDTO = ContatoDTO.builder().build();
+        if(contatoDTO.getNome() == "Gabriel"){
+            System.out.println("Gabriel");
+        }
+
         return ContatoDTO.builder()
                 .id(contactEntity.getId())
                 .nome(contactEntity.getNome())

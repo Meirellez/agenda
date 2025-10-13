@@ -19,9 +19,12 @@ public class ValidationContactPerson extends Validation<Contact, ContactReposito
         if (repository.existsByNome(contact.getNome())) {
             throw new IllegalArgumentException("Já existe um contato cadastrado com este nome.");
         }
-        if (repository.existsByTelefone(contact.getTelefone())) {
-            throw new IllegalArgumentException("Já existe um contato cadastrado com este telefone.");
+        for(Telefone telefone : contact.getTelefone()) {
+            if (repository.existsByTelefone(telefone.getNumero())) {
+                throw new IllegalArgumentException("Já existe um contato cadastrado com este telefone.");
+            }
         }
+
         if (repository.existsByEmail(contact.getEmail())) {
             throw new IllegalArgumentException("Já existe um contato cadastrado com este e-mail.");
         }
