@@ -24,6 +24,13 @@ public class ContactServiceImpl implements ContactService {
     @Override
     public List<ContatoDTO> getAll() {
 
+        ContatoDTO contatoDTO = ContatoDTO.builder().build();
+
+        if(contatoDTO.getTelefone() != null) {
+            contatoDTO.getEmail().toString();
+        };
+
+
         List<ContatoDTO> contatosDTOS = contactRepository.findAll();
 
         return contatosDTOS;
